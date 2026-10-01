@@ -1,0 +1,1158 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Technology behind corporation | Consultoria em Inteligência Artificial</title>
+  <meta name="description" content="A Technology behind corporation é uma consultoria em Inteligência Artificial que identifica problemas empresariais e desenvolve soluções inteligentes e personalizadas para melhorar processos e resultados." />
+  
+  <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            heading: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#ecfeff',
+              100: '#cffafe',
+              200: '#a5f3fc',
+              300: '#67e8f9',
+              400: '#22d3ee',
+              500: '#06b6d4',
+              600: '#0891b2',
+              700: '#0e7490',
+              800: '#155e75',
+              900: '#164e63',
+              glow: '#00f2fe',
+              indigo: '#6366f1',
+              violet: '#8b5cf6',
+              dark: '#05070f',
+              card: 'rgba(15, 23, 42, 0.75)',
+              cardBorder: 'rgba(255, 255, 255, 0.08)'
+            }
+          },
+          animation: {
+            'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'float': 'float 6s ease-in-out infinite',
+            'glow-pulse': 'glowPulse 3s ease-in-out infinite alternate',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-10px)' },
+            },
+            glowPulse: {
+              '0%': { opacity: '0.4', filter: 'drop-shadow(0 0 15px rgba(6, 182, 212, 0.4))' },
+              '100%': { opacity: '0.8', filter: 'drop-shadow(0 0 30px rgba(99, 102, 241, 0.8))' }
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="bg-[#05070f] text-slate-100 font-sans selection:bg-cyan-500 selection:text-black overflow-x-hidden antialiased">
+
+  <!-- Glow background elements -->
+  <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+    <div class="absolute -top-40 -left-40 w-[600px] h-[600px] bg-cyan-500/10 rounded-full blur-[140px]"></div>
+    <div class="absolute top-1/3 -right-40 w-[600px] h-[600px] bg-indigo-500/10 rounded-full blur-[150px]"></div>
+    <div class="absolute -bottom-40 left-1/3 w-[600px] h-[600px] bg-cyan-600/10 rounded-full blur-[140px]"></div>
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(120,119,198,0.05),rgba(255,255,255,0))]"></div>
+  </div>
+
+  <!-- Header / Navigation Bar -->
+  <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 backdrop-blur-md bg-[#05070f]/80 border-b border-white/[0.06]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- Logo -->
+        <a href="#inicio" class="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-cyan-400 rounded-lg p-1">
+          <div class="relative flex items-center justify-center w-11 h-11 rounded-xl bg-gradient-to-br from-cyan-500 via-indigo-500 to-violet-600 p-[1.5px] shadow-lg shadow-cyan-500/20 group-hover:shadow-cyan-500/40 transition-all duration-300">
+            <div class="w-full h-full bg-[#070b19] rounded-[10px] flex items-center justify-center">
+              <svg class="w-6 h-6 text-cyan-400 group-hover:scale-110 transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+              </svg>
+            </div>
+          </div>
+          <div class="flex flex-col">
+            <span class="font-heading font-extrabold text-base sm:text-lg tracking-tight text-white flex items-center gap-1">
+              Technology behind corporation
+              <span class="inline-block w-2 h-2 rounded-full bg-cyan-400 animate-pulse shrink-0"></span>
+            </span>
+            <span class="text-[10px] tracking-[0.25em] font-medium text-cyan-300/70 uppercase">Consultoria em IA</span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="hidden lg:flex items-center gap-1 xl:gap-2">
+          <a href="#inicio" class="nav-link px-3 py-2 text-sm font-medium text-slate-300 hover:text-cyan-400 rounded-lg hover:bg-white/[0.04] transition-all">Início</a>
+          <a href="#sobre" class="nav-link px-3 py-2 text-sm font-medium text-slate-300 hover:text-cyan-400 rounded-lg hover:bg-white/[0.04] transition-all">Sobre a Empresa</a>
+          <a href="#servicos" class="nav-link px-3 py-2 text-sm font-medium text-slate-300 hover:text-cyan-400 rounded-lg hover:bg-white/[0.04] transition-all">Serviços</a>
+          <a href="#como-trabalhamos" class="nav-link px-3 py-2 text-sm font-medium text-slate-300 hover:text-cyan-400 rounded-lg hover:bg-white/[0.04] transition-all">Como Trabalhamos</a>
+          <a href="#institucional" class="nav-link px-3 py-2 text-sm font-medium text-slate-300 hover:text-cyan-400 rounded-lg hover:bg-white/[0.04] transition-all">Identidade</a>
+          <a href="#beneficios" class="nav-link px-3 py-2 text-sm font-medium text-slate-300 hover:text-cyan-400 rounded-lg hover:bg-white/[0.04] transition-all">Benefícios</a>
+        </nav>
+
+        <!-- CTA Header Button -->
+        <div class="hidden lg:flex items-center">
+          <a href="#contato" class="relative inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-semibold rounded-xl group bg-gradient-to-r from-cyan-500 to-indigo-600 group-hover:from-cyan-500 group-hover:to-indigo-500 hover:shadow-lg hover:shadow-cyan-500/25 transition-all duration-300">
+            <span class="relative px-5 py-2.5 transition-all ease-in duration-200 bg-[#070b19] rounded-[10px] group-hover:bg-opacity-0 flex items-center gap-2 text-white">
+              <span>Entrar em contato</span>
+              <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-0.5 transition-transform"></i>
+            </span>
+          </a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <div class="flex lg:hidden">
+          <button id="mobile-menu-btn" type="button" aria-label="Abrir menu" class="p-2.5 rounded-xl text-slate-300 hover:text-white bg-white/[0.05] border border-white/10 focus:outline-none focus:ring-2 focus:ring-cyan-400">
+            <i id="menu-icon" data-lucide="menu" class="w-6 h-6"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobile-menu" class="lg:hidden hidden bg-[#070c1a]/95 backdrop-blur-xl border-b border-white/10 px-4 pt-3 pb-6 space-y-2 transition-all duration-300">
+      <a href="#inicio" class="mobile-nav-link block px-4 py-3 rounded-lg text-base font-medium text-slate-200 hover:bg-white/[0.06] hover:text-cyan-400 transition-colors">Início</a>
+      <a href="#sobre" class="mobile-nav-link block px-4 py-3 rounded-lg text-base font-medium text-slate-200 hover:bg-white/[0.06] hover:text-cyan-400 transition-colors">Sobre a Empresa</a>
+      <a href="#servicos" class="mobile-nav-link block px-4 py-3 rounded-lg text-base font-medium text-slate-200 hover:bg-white/[0.06] hover:text-cyan-400 transition-colors">Serviços</a>
+      <a href="#como-trabalhamos" class="mobile-nav-link block px-4 py-3 rounded-lg text-base font-medium text-slate-200 hover:bg-white/[0.06] hover:text-cyan-400 transition-colors">Como Trabalhamos</a>
+      <a href="#institucional" class="mobile-nav-link block px-4 py-3 rounded-lg text-base font-medium text-slate-200 hover:bg-white/[0.06] hover:text-cyan-400 transition-colors">Missão, Visão e Valores</a>
+      <a href="#beneficios" class="mobile-nav-link block px-4 py-3 rounded-lg text-base font-medium text-slate-200 hover:bg-white/[0.06] hover:text-cyan-400 transition-colors">Benefícios</a>
+      <div class="pt-2">
+        <a href="#contato" class="mobile-nav-link block text-center px-4 py-3 rounded-xl font-semibold text-white bg-gradient-to-r from-cyan-500 to-indigo-600 shadow-md shadow-cyan-500/20">Entrar em contato</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Area -->
+  <main class="relative z-10">
+
+    <!-- 1. PÁGINA INICIAL / HERO SECTION -->
+    <section id="inicio" class="relative min-h-screen flex items-center justify-center pt-24 pb-16 lg:pt-32 lg:pb-24 overflow-hidden">
+      
+      <!-- Interactive Neural Canvas Background -->
+      <canvas id="neural-canvas" class="absolute inset-0 w-full h-full pointer-events-auto opacity-60 z-0"></canvas>
+      
+      <!-- Subtle Grid Pattern -->
+      <div class="absolute inset-0 bg-grid-pattern opacity-15 pointer-events-none z-0"></div>
+
+      <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        
+        <!-- Tech Tag / Badge -->
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cyan-950/60 border border-cyan-500/30 text-cyan-300 text-xs sm:text-sm font-medium mb-8 backdrop-blur-md animate-fade-in shadow-[0_0_20px_rgba(6,182,212,0.15)]">
+          <span class="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
+          <span>Consultoria Especializada em Inteligência Artificial</span>
+        </div>
+
+        <!-- Main Title -->
+        <h1 class="font-heading font-extrabold text-4xl sm:text-6xl lg:text-7xl tracking-tight text-white mb-6 leading-[1.1]">
+          Transformando desafios em soluções com <br class="hidden sm:inline" />
+          <span class="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-sky-300 to-indigo-400 drop-shadow-[0_0_35px_rgba(6,182,212,0.35)]">
+            Inteligência Artificial
+          </span>
+        </h1>
+
+        <!-- Subtitle / Breve Apresentação -->
+        <p class="max-w-3xl mx-auto text-lg sm:text-xl text-slate-300/90 font-normal leading-relaxed mb-10 text-balance">
+          A <strong class="text-cyan-300 font-semibold">Technology behind corporation</strong> analisa os problemas e necessidades de empresas para desenvolver soluções personalizadas utilizando IA, potencializando processos, reduzindo custos e maximizando resultados.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-5">
+          <a href="#sobre" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-base font-semibold text-white bg-gradient-to-r from-cyan-500 via-sky-500 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500 shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 hover:-translate-y-0.5 transition-all duration-300">
+            <span>Conheça a Technology behind corporation</span>
+            <i data-lucide="sparkles" class="w-5 h-5"></i>
+          </a>
+          
+          <a href="#contato" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-base font-semibold text-slate-200 bg-slate-900/80 hover:bg-slate-800/90 border border-white/10 hover:border-cyan-500/40 hover:text-white backdrop-blur-md transition-all duration-300">
+            <span>Fale com um Especialista</span>
+            <i data-lucide="arrow-down-right" class="w-5 h-5 text-cyan-400"></i>
+          </a>
+        </div>
+
+        <!-- Value Highlights Pills -->
+        <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto text-left">
+          <div class="p-4 rounded-2xl bg-white/[0.03] border border-white/[0.06] backdrop-blur-md flex items-center gap-3.5 hover:border-cyan-500/30 transition-all">
+            <div class="w-10 h-10 rounded-xl bg-cyan-500/10 flex items-center justify-center text-cyan-400 shrink-0">
+              <i data-lucide="cpu" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <p class="text-xs text-slate-400 uppercase tracking-wider font-semibold">Tecnologia</p>
+              <p class="text-sm font-semibold text-white">IA Avançada</p>
+            </div>
+          </div>
+
+          <div class="p-4 rounded-2xl bg-white/[0.03] border border-white/[0.06] backdrop-blur-md flex items-center gap-3.5 hover:border-cyan-500/30 transition-all">
+            <div class="w-10 h-10 rounded-xl bg-indigo-500/10 flex items-center justify-center text-indigo-400 shrink-0">
+              <i data-lucide="sliders" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <p class="text-xs text-slate-400 uppercase tracking-wider font-semibold">Estratégia</p>
+              <p class="text-sm font-semibold text-white">Soluções Sob Medida</p>
+            </div>
+          </div>
+
+          <div class="p-4 rounded-2xl bg-white/[0.03] border border-white/[0.06] backdrop-blur-md flex items-center gap-3.5 hover:border-cyan-500/30 transition-all">
+            <div class="w-10 h-10 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-400 shrink-0">
+              <i data-lucide="trending-up" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <p class="text-xs text-slate-400 uppercase tracking-wider font-semibold">Impacto</p>
+              <p class="text-sm font-semibold text-white">Otimização Real</p>
+            </div>
+          </div>
+
+          <div class="p-4 rounded-2xl bg-white/[0.03] border border-white/[0.06] backdrop-blur-md flex items-center gap-3.5 hover:border-cyan-500/30 transition-all">
+            <div class="w-10 h-10 rounded-xl bg-violet-500/10 flex items-center justify-center text-violet-400 shrink-0">
+              <i data-lucide="shield-check" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <p class="text-xs text-slate-400 uppercase tracking-wider font-semibold">Segurança</p>
+              <p class="text-sm font-semibold text-white">Integração Confiável</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- 2. SOBRE A SECTION -->
+    <section id="sobre" class="py-24 relative border-t border-white/[0.06] bg-[#070b18]/60">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          
+          <!-- Left Visual / Interactive Card -->
+          <div class="lg:col-span-5 relative">
+            <div class="relative mx-auto max-w-md lg:max-w-none">
+              
+              <!-- Ambient Glow behind card -->
+              <div class="absolute -inset-1.5 bg-gradient-to-r from-cyan-500 to-indigo-600 rounded-3xl blur-xl opacity-30 group-hover:opacity-60 transition duration-1000 group-hover:duration-200"></div>
+              
+              <!-- Glass Card -->
+              <div class="relative rounded-2xl bg-[#0b1329]/90 border border-white/10 p-8 sm:p-10 shadow-2xl backdrop-blur-xl">
+                
+                <div class="flex items-center justify-between border-b border-white/10 pb-6 mb-6">
+                  <div class="flex items-center gap-3">
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-cyan-500 to-indigo-500 p-0.5">
+                      <div class="w-full h-full bg-[#090e1f] rounded-[10px] flex items-center justify-center">
+                        <i data-lucide="brain-circuit" class="w-6 h-6 text-cyan-400"></i>
+                      </div>
+                    </div>
+                    <div>
+                      <h4 class="font-heading font-bold text-base text-white">Technology behind corporation</h4>
+                      <p class="text-xs text-slate-400">Consultoria em IA</p>
+                    </div>
+                  </div>
+                  <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 shrink-0">
+                    Propósito & Visão
+                  </span>
+                </div>
+
+                <div class="space-y-4">
+                  <div class="p-4 rounded-xl bg-white/[0.02] border border-white/[0.04]">
+                    <div class="flex items-center gap-3 text-cyan-300 text-sm font-semibold mb-1">
+                      <i data-lucide="search" class="w-4 h-4"></i>
+                      Diagnóstico Analítico
+                    </div>
+                    <p class="text-xs text-slate-400 leading-relaxed">Identificação precisa das reais dores e gargalos do modelo de negócio.</p>
+                  </div>
+
+                  <div class="p-4 rounded-xl bg-white/[0.02] border border-white/[0.04]">
+                    <div class="flex items-center gap-3 text-indigo-300 text-sm font-semibold mb-1">
+                      <i data-lucide="code-2" class="w-4 h-4"></i>
+                      Desenvolvimento Dedicado
+                    </div>
+                    <p class="text-xs text-slate-400 leading-relaxed">Engenharia de algoritmos e modelos inteligentes construídos sob demanda.</p>
+                  </div>
+
+                  <div class="p-4 rounded-xl bg-white/[0.02] border border-white/[0.04]">
+                    <div class="flex items-center gap-3 text-emerald-300 text-sm font-semibold mb-1">
+                      <i data-lucide="zap" class="w-4 h-4"></i>
+                      Geração de Eficiência
+                    </div>
+                    <p class="text-xs text-slate-400 leading-relaxed">Ganhos mensuráveis em produtividade, redução de custos e tempo.</p>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Content -->
+          <div class="lg:col-span-7">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-semibold uppercase tracking-wider mb-4">
+              Sobre a Technology behind corporation
+            </div>
+
+            <h2 class="font-heading font-bold text-3xl sm:text-4xl lg:text-5xl text-white tracking-tight mb-6 leading-tight">
+              Excelência estratégica em <br />
+              <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-indigo-400">
+                Inteligência Artificial Corporativa
+              </span>
+            </h2>
+
+            <div class="space-y-6 text-slate-300 text-base sm:text-lg leading-relaxed">
+              <p class="text-white font-medium text-lg sm:text-xl border-l-4 border-cyan-400 pl-4 py-1 bg-cyan-950/20 rounded-r-lg">
+                "A Technology behind corporation é uma consultoria em Inteligência Artificial que identifica problemas empresariais e desenvolve soluções inteligentes e personalizadas para melhorar processos e resultados."
+              </p>
+
+              <p class="text-slate-300/90 font-normal">
+                Nosso propósito é preencher o espaço entre os desafios complexos enfrentados pelas organizações modernas e o potencial transformador da Inteligência Artificial. Através de uma abordagem consultiva rigorosa, analisamos profundamente os fluxos operacionais, estruturas de dados e necessidades de cada empresa.
+              </p>
+
+              <p class="text-slate-400 text-base">
+                Com base nesse diagnóstico, desenvolvemos soluções tecnológicas inteligentes e sob medida, garantindo que a IA seja aplicada de maneira estratégica, ética e diretamente orientada à geração de valor sustentável.
+              </p>
+            </div>
+
+            <div class="mt-8 pt-6 border-t border-white/[0.08] flex flex-wrap gap-4 items-center">
+              <a href="#servicos" class="inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 font-semibold text-sm group">
+                <span>Explorar nossos serviços de IA</span>
+                <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+              </a>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 3. SERVIÇOS SECTION -->
+    <section id="servicos" class="py-24 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Header -->
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-semibold uppercase tracking-wider mb-4">
+            Nossos Serviços
+          </div>
+          <h2 class="font-heading font-bold text-3xl sm:text-4xl lg:text-5xl text-white tracking-tight mb-4">
+            Soluções completas em Inteligência Artificial
+          </h2>
+          <p class="text-slate-400 text-base sm:text-lg">
+            Da identificação estratégica à implementação contínua, cobrimos todo o ciclo de vida das soluções de IA para a sua empresa.
+          </p>
+        </div>
+
+        <!-- Services 8 Cards Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+          <!-- Serviço 1: Análise de problemas empresariais -->
+          <div class="service-card group relative rounded-2xl bg-[#0c1224]/80 border border-white/[0.08] p-7 hover:border-cyan-500/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-cyan-500/10 flex flex-col justify-between">
+            <div class="absolute inset-0 rounded-2xl bg-gradient-to-b from-cyan-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
+            <div>
+              <div class="w-13 h-13 w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 mb-6 group-hover:scale-110 group-hover:bg-cyan-500 group-hover:text-black transition-all duration-300">
+                <i data-lucide="microscope" class="w-6 h-6"></i>
+              </div>
+              <h3 class="font-heading font-bold text-xl text-white mb-3 group-hover:text-cyan-300 transition-colors">
+                Análise de problemas empresariais
+              </h3>
+              <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                Mapeamento detalhado dos processos e gargalos operacionais da empresa para diagnosticar onde a IA trará o maior retorno e eficiência.
+              </p>
+            </div>
+            <div class="pt-4 border-t border-white/[0.06] flex items-center text-xs text-cyan-400/80 font-medium">
+              Diagnóstico Estratégico
+            </div>
+          </div>
+
+          <!-- Serviço 2: Desenvolvimento de soluções com IA -->
+          <div class="service-card group relative rounded-2xl bg-[#0c1224]/80 border border-white/[0.08] p-7 hover:border-indigo-500/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-indigo-500/10 flex flex-col justify-between">
+            <div class="absolute inset-0 rounded-2xl bg-gradient-to-b from-indigo-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 mb-6 group-hover:scale-110 group-hover:bg-indigo-500 group-hover:text-white transition-all duration-300">
+                <i data-lucide="cpu" class="w-6 h-6"></i>
+              </div>
+              <h3 class="font-heading font-bold text-xl text-white mb-3 group-hover:text-indigo-300 transition-colors">
+                Desenvolvimento de soluções com IA
+              </h3>
+              <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                Criação e modelagem de algoritmos e modelos inteligentes personalizados, concebidos exclusivamente para atender as necessidades da organização.
+              </p>
+            </div>
+            <div class="pt-4 border-t border-white/[0.06] flex items-center text-xs text-indigo-400/80 font-medium">
+              Engenharia de Modelos
+            </div>
+          </div>
+
+          <!-- Serviço 3: Automação de processos -->
+          <div class="service-card group relative rounded-2xl bg-[#0c1224]/80 border border-white/[0.08] p-7 hover:border-sky-500/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-sky-500/10 flex flex-col justify-between">
+            <div class="absolute inset-0 rounded-2xl bg-gradient-to-b from-sky-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-sky-500/10 border border-sky-500/20 flex items-center justify-center text-sky-400 mb-6 group-hover:scale-110 group-hover:bg-sky-500 group-hover:text-black transition-all duration-300">
+                <i data-lucide="workflow" class="w-6 h-6"></i>
+              </div>
+              <h3 class="font-heading font-bold text-xl text-white mb-3 group-hover:text-sky-300 transition-colors">
+                Automação de processos
+              </h3>
+              <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                Automatização inteligente de fluxos de trabalho repetitivos, reduzindo tempo de execução operacional e minimizando a ocorrência de falhas humanas.
+              </p>
+            </div>
+            <div class="pt-4 border-t border-white/[0.06] flex items-center text-xs text-sky-400/80 font-medium">
+              Eficiência & Escala
+            </div>
+          </div>
+
+          <!-- Serviço 4: Previsão e análise de dados -->
+          <div class="service-card group relative rounded-2xl bg-[#0c1224]/80 border border-white/[0.08] p-7 hover:border-emerald-500/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-emerald-500/10 flex flex-col justify-between">
+            <div class="absolute inset-0 rounded-2xl bg-gradient-to-b from-emerald-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 mb-6 group-hover:scale-110 group-hover:bg-emerald-500 group-hover:text-black transition-all duration-300">
+                <i data-lucide="line-chart" class="w-6 h-6"></i>
+              </div>
+              <h3 class="font-heading font-bold text-xl text-white mb-3 group-hover:text-emerald-300 transition-colors">
+                Previsão e análise de dados
+              </h3>
+              <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                Análise preditiva avançada que identifica padrões históricos, antecipa tendências de mercado e subsidia tomadas de decisão estratégicas.
+              </p>
+            </div>
+            <div class="pt-4 border-t border-white/[0.06] flex items-center text-xs text-emerald-400/80 font-medium">
+              Modelagem Preditiva
+            </div>
+          </div>
+
+          <!-- Serviço 5: Sistemas de recomendação -->
+          <div class="service-card group relative rounded-2xl bg-[#0c1224]/80 border border-white/[0.08] p-7 hover:border-amber-500/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-amber-500/10 flex flex-col justify-between">
+            <div class="absolute inset-0 rounded-2xl bg-gradient-to-b from-amber-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 mb-6 group-hover:scale-110 group-hover:bg-amber-500 group-hover:text-black transition-all duration-300">
+                <i data-lucide="target" class="w-6 h-6"></i>
+              </div>
+              <h3 class="font-heading font-bold text-xl text-white mb-3 group-hover:text-amber-300 transition-colors">
+                Sistemas de recomendação
+              </h3>
+              <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                Mecanismos de recomendação hiperpersonalizados para produtos, serviços e conteúdos, elevando a assertividade e relevância em cada interação.
+              </p>
+            </div>
+            <div class="pt-4 border-t border-white/[0.06] flex items-center text-xs text-amber-400/80 font-medium">
+              Hiperpersonalização
+            </div>
+          </div>
+
+          <!-- Serviço 6: Detecção de anomalias -->
+          <div class="service-card group relative rounded-2xl bg-[#0c1224]/80 border border-white/[0.08] p-7 hover:border-rose-500/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-rose-500/10 flex flex-col justify-between">
+            <div class="absolute inset-0 rounded-2xl bg-gradient-to-b from-rose-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-rose-500/10 border border-rose-500/20 flex items-center justify-center text-rose-400 mb-6 group-hover:scale-110 group-hover:bg-rose-500 group-hover:text-white transition-all duration-300">
+                <i data-lucide="shield-alert" class="w-6 h-6"></i>
+              </div>
+              <h3 class="font-heading font-bold text-xl text-white mb-3 group-hover:text-rose-300 transition-colors">
+                Detecção de anomalias
+              </h3>
+              <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                Monitoramento inteligente para identificar comportamentos atípicos, fraudes operacionais, desvios e riscos em tempo quase real.
+              </p>
+            </div>
+            <div class="pt-4 border-t border-white/[0.06] flex items-center text-xs text-rose-400/80 font-medium">
+              Segurança & Prevenção
+            </div>
+          </div>
+
+          <!-- Serviço 7: Integração de IA com sistemas existentes -->
+          <div class="service-card group relative rounded-2xl bg-[#0c1224]/80 border border-white/[0.08] p-7 hover:border-teal-500/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-teal-500/10 flex flex-col justify-between">
+            <div class="absolute inset-0 rounded-2xl bg-gradient-to-b from-teal-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-teal-500/10 border border-teal-500/20 flex items-center justify-center text-teal-400 mb-6 group-hover:scale-110 group-hover:bg-teal-500 group-hover:text-black transition-all duration-300">
+                <i data-lucide="cable" class="w-6 h-6"></i>
+              </div>
+              <h3 class="font-heading font-bold text-xl text-white mb-3 group-hover:text-teal-300 transition-colors">
+                Integração de IA com sistemas existentes
+              </h3>
+              <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                Conexão fluida de módulos de inteligência artificial com CRMs, ERPs, bancos de dados e ecossistemas legados sem interrupções operacionais.
+              </p>
+            </div>
+            <div class="pt-4 border-t border-white/[0.06] flex items-center text-xs text-teal-400/80 font-medium">
+              Conectividade Total
+            </div>
+          </div>
+
+          <!-- Serviço 8: Implementação e suporte de soluções de IA -->
+          <div class="service-card group relative rounded-2xl bg-[#0c1224]/80 border border-white/[0.08] p-7 hover:border-violet-500/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-violet-500/10 flex flex-col justify-between">
+            <div class="absolute inset-0 rounded-2xl bg-gradient-to-b from-violet-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-violet-500/10 border border-violet-500/20 flex items-center justify-center text-violet-400 mb-6 group-hover:scale-110 group-hover:bg-violet-500 group-hover:text-white transition-all duration-300">
+                <i data-lucide="headphones" class="w-6 h-6"></i>
+              </div>
+              <h3 class="font-heading font-bold text-xl text-white mb-3 group-hover:text-violet-300 transition-colors">
+                Implementação e suporte de soluções de IA
+              </h3>
+              <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                Deployment seguro em ambiente produtivo, acompanhamento técnico, calibração constante e sustentação contínua dos modelos implementados.
+              </p>
+            </div>
+            <div class="pt-4 border-t border-white/[0.06] flex items-center text-xs text-violet-400/80 font-medium">
+              Sustentação & Evolução
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 4. COMO TRABALHAMOS SECTION -->
+    <section id="como-trabalhamos" class="py-24 relative border-t border-white/[0.06] bg-[#070b18]/60">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Header -->
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs font-semibold uppercase tracking-wider mb-4">
+            Nossa Metodologia
+          </div>
+          <h2 class="font-heading font-bold text-3xl sm:text-4xl lg:text-5xl text-white tracking-tight mb-4">
+            Como trabalhamos
+          </h2>
+          <p class="text-slate-400 text-base sm:text-lg">
+            Um processo consultivo estruturado em quatro etapas para transformar desafios em valor real com IA.
+          </p>
+        </div>
+
+        <!-- 4 Step Process Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
+          
+          <!-- Step 1: Análise -->
+          <div class="relative rounded-2xl bg-[#0c1326] border border-white/10 p-8 flex flex-col justify-between hover:border-cyan-400/40 transition-all duration-300 group">
+            <div>
+              <div class="flex items-center justify-between mb-8">
+                <span class="font-heading font-black text-4xl text-cyan-500/40 group-hover:text-cyan-400 transition-colors">01</span>
+                <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 group-hover:bg-cyan-500 group-hover:text-black transition-all">
+                  <i data-lucide="search" class="w-6 h-6"></i>
+                </div>
+              </div>
+              <h3 class="font-heading font-bold text-2xl text-white mb-3">
+                1. Análise
+              </h3>
+              <p class="text-slate-300 text-sm leading-relaxed">
+                Entendemos os problemas da empresa.
+              </p>
+              <p class="text-slate-400 text-xs mt-3 leading-relaxed">
+                Mergulhamos no contexto do negócio para compreender os desafios operacionais, a qualidade dos dados disponíveis e os objetivos prioritários.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-white/[0.06]">
+              <span class="text-[11px] font-semibold tracking-wider uppercase text-cyan-400">Etapa de Diagnóstico</span>
+            </div>
+          </div>
+
+          <!-- Step 2: Planejamento -->
+          <div class="relative rounded-2xl bg-[#0c1326] border border-white/10 p-8 flex flex-col justify-between hover:border-sky-400/40 transition-all duration-300 group">
+            <div>
+              <div class="flex items-center justify-between mb-8">
+                <span class="font-heading font-black text-4xl text-sky-500/40 group-hover:text-sky-400 transition-colors">02</span>
+                <div class="w-12 h-12 rounded-xl bg-sky-500/10 border border-sky-500/20 flex items-center justify-center text-sky-400 group-hover:bg-sky-500 group-hover:text-black transition-all">
+                  <i data-lucide="compass" class="w-6 h-6"></i>
+                </div>
+              </div>
+              <h3 class="font-heading font-bold text-2xl text-white mb-3">
+                2. Planejamento
+              </h3>
+              <p class="text-slate-300 text-sm leading-relaxed">
+                Identificamos onde a IA pode gerar melhorias.
+              </p>
+              <p class="text-slate-400 text-xs mt-3 leading-relaxed">
+                Definimos a arquitetura técnica ideal, modelos aplicáveis, métricas de sucesso e o roteiro de entrega da solução inteligente.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-white/[0.06]">
+              <span class="text-[11px] font-semibold tracking-wider uppercase text-sky-400">Estratégia & Arquitetura</span>
+            </div>
+          </div>
+
+          <!-- Step 3: Desenvolvimento -->
+          <div class="relative rounded-2xl bg-[#0c1326] border border-white/10 p-8 flex flex-col justify-between hover:border-indigo-400/40 transition-all duration-300 group">
+            <div>
+              <div class="flex items-center justify-between mb-8">
+                <span class="font-heading font-black text-4xl text-indigo-500/40 group-hover:text-indigo-400 transition-colors">03</span>
+                <div class="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 group-hover:bg-indigo-500 group-hover:text-white transition-all">
+                  <i data-lucide="layers" class="w-6 h-6"></i>
+                </div>
+              </div>
+              <h3 class="font-heading font-bold text-2xl text-white mb-3">
+                3. Desenvolvimento
+              </h3>
+              <p class="text-slate-300 text-sm leading-relaxed">
+                Criamos e integramos a solução.
+              </p>
+              <p class="text-slate-400 text-xs mt-3 leading-relaxed">
+                Construção dos modelos de IA, treinamento com dados pertinentes, validação rigorosa e integração direta com os sistemas corporativos.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-white/[0.06]">
+              <span class="text-[11px] font-semibold tracking-wider uppercase text-indigo-400">Construção & Integração</span>
+            </div>
+          </div>
+
+          <!-- Step 4: Implementação -->
+          <div class="relative rounded-2xl bg-[#0c1326] border border-white/10 p-8 flex flex-col justify-between hover:border-emerald-400/40 transition-all duration-300 group">
+            <div>
+              <div class="flex items-center justify-between mb-8">
+                <span class="font-heading font-black text-4xl text-emerald-500/40 group-hover:text-emerald-400 transition-colors">04</span>
+                <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 group-hover:bg-emerald-500 group-hover:text-black transition-all">
+                  <i data-lucide="check-circle-2" class="w-6 h-6"></i>
+                </div>
+              </div>
+              <h3 class="font-heading font-bold text-2xl text-white mb-3">
+                4. Implementação
+              </h3>
+              <p class="text-slate-300 text-sm leading-relaxed">
+                Colocamos o sistema em funcionamento e acompanhamos os resultados.
+              </p>
+              <p class="text-slate-400 text-xs mt-3 leading-relaxed">
+                Lançamento em produção, monitoramento de desempenho e garantia de melhoria contínua dos resultados obtidos.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-white/[0.06]">
+              <span class="text-[11px] font-semibold tracking-wider uppercase text-emerald-400">Operação & Resultados</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 5. MISSÃO, VISÃO E VALORES SECTION -->
+    <section id="institucional" class="py-24 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Header -->
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-semibold uppercase tracking-wider mb-4">
+            Nossos Pilares
+          </div>
+          <h2 class="font-heading font-bold text-3xl sm:text-4xl lg:text-5xl text-white tracking-tight mb-4">
+            Missão, Visão e Valores
+          </h2>
+          <p class="text-slate-400 text-base sm:text-lg">
+            A essência que orienta a Technology behind corporation em cada decisão estratégica e projeto consultivo.
+          </p>
+        </div>
+
+        <!-- Missão & Visão Cards (2 Colunas) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+          
+          <!-- Missão -->
+          <div class="relative rounded-2xl bg-gradient-to-br from-[#0e162d] to-[#0a0f20] border border-cyan-500/30 p-8 sm:p-10 shadow-xl relative overflow-hidden group">
+            <div class="absolute top-0 right-0 w-48 h-48 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none group-hover:bg-cyan-500/20 transition-all duration-500"></div>
+            
+            <div class="flex items-center gap-4 mb-6">
+              <div class="w-14 h-14 rounded-2xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 shrink-0">
+                <i data-lucide="target" class="w-7 h-7"></i>
+              </div>
+              <div>
+                <span class="text-xs font-bold uppercase tracking-widest text-cyan-400">Propósito Maior</span>
+                <h3 class="font-heading font-bold text-2xl sm:text-3xl text-white">Missão</h3>
+              </div>
+            </div>
+
+            <p class="text-lg sm:text-xl text-slate-200 font-medium leading-relaxed italic border-l-2 border-cyan-400 pl-4 py-1">
+              "Utilizar a Inteligência Artificial para transformar problemas empresariais em soluções eficientes e personalizadas."
+            </p>
+          </div>
+
+          <!-- Visão -->
+          <div class="relative rounded-2xl bg-gradient-to-br from-[#0e162d] to-[#0a0f20] border border-indigo-500/30 p-8 sm:p-10 shadow-xl relative overflow-hidden group">
+            <div class="absolute top-0 right-0 w-48 h-48 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none group-hover:bg-indigo-500/20 transition-all duration-500"></div>
+            
+            <div class="flex items-center gap-4 mb-6">
+              <div class="w-14 h-14 rounded-2xl bg-indigo-500/10 border border-indigo-500/30 flex items-center justify-center text-indigo-400 shrink-0">
+                <i data-lucide="eye" class="w-7 h-7"></i>
+              </div>
+              <div>
+                <span class="text-xs font-bold uppercase tracking-widest text-indigo-400">Nosso Horizonte</span>
+                <h3 class="font-heading font-bold text-2xl sm:text-3xl text-white">Visão</h3>
+              </div>
+            </div>
+
+            <p class="text-lg sm:text-xl text-slate-200 font-medium leading-relaxed italic border-l-2 border-indigo-400 pl-4 py-1">
+              "Ser uma referência em consultoria de Inteligência Artificial, ajudando empresas a utilizar a tecnologia de forma estratégica."
+            </p>
+          </div>
+
+        </div>
+
+        <!-- Valores (5 Cards) -->
+        <div>
+          <h3 class="font-heading font-bold text-2xl text-white text-center mb-8 flex items-center justify-center gap-3">
+            <i data-lucide="award" class="w-6 h-6 text-cyan-400"></i>
+            Nossos Valores Fundamentais
+          </h3>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+            
+            <!-- Inovação -->
+            <div class="p-6 rounded-2xl bg-[#0c1326]/90 border border-white/[0.08] hover:border-cyan-400/50 hover:bg-[#0e172e] transition-all text-center group">
+              <div class="w-12 h-12 mx-auto rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 mb-4 group-hover:scale-110 transition-transform">
+                <i data-lucide="sparkles" class="w-6 h-6"></i>
+              </div>
+              <h4 class="font-heading font-bold text-lg text-white mb-2 group-hover:text-cyan-300 transition-colors">Inovação</h4>
+              <p class="text-xs text-slate-400 leading-relaxed">
+                Busca constante pelas técnicas e modelos de IA mais avançados para criar soluções pioneiras.
+              </p>
+            </div>
+
+            <!-- Eficiência -->
+            <div class="p-6 rounded-2xl bg-[#0c1326]/90 border border-white/[0.08] hover:border-sky-400/50 hover:bg-[#0e172e] transition-all text-center group">
+              <div class="w-12 h-12 mx-auto rounded-xl bg-sky-500/10 border border-sky-500/20 flex items-center justify-center text-sky-400 mb-4 group-hover:scale-110 transition-transform">
+                <i data-lucide="zap" class="w-6 h-6"></i>
+              </div>
+              <h4 class="font-heading font-bold text-lg text-white mb-2 group-hover:text-sky-300 transition-colors">Eficiência</h4>
+              <p class="text-xs text-slate-400 leading-relaxed">
+                Foco estrito em otimização de recursos, ganho de tempo e soluções ágeis de alto impacto.
+              </p>
+            </div>
+
+            <!-- Transparência -->
+            <div class="p-6 rounded-2xl bg-[#0c1326]/90 border border-white/[0.08] hover:border-indigo-400/50 hover:bg-[#0e172e] transition-all text-center group">
+              <div class="w-12 h-12 mx-auto rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 mb-4 group-hover:scale-110 transition-transform">
+                <i data-lucide="shield" class="w-6 h-6"></i>
+              </div>
+              <h4 class="font-heading font-bold text-lg text-white mb-2 group-hover:text-indigo-300 transition-colors">Transparência</h4>
+              <p class="text-xs text-slate-400 leading-relaxed">
+                Relações claras, diagnósticos honestos e explicabilidade nos modelos de IA adotados.
+              </p>
+            </div>
+
+            <!-- Responsabilidade -->
+            <div class="p-6 rounded-2xl bg-[#0c1326]/90 border border-white/[0.08] hover:border-violet-400/50 hover:bg-[#0e172e] transition-all text-center group">
+              <div class="w-12 h-12 mx-auto rounded-xl bg-violet-500/10 border border-violet-500/20 flex items-center justify-center text-violet-400 mb-4 group-hover:scale-110 transition-transform">
+                <i data-lucide="scale" class="w-6 h-6"></i>
+              </div>
+              <h4 class="font-heading font-bold text-lg text-white mb-2 group-hover:text-violet-300 transition-colors">Responsabilidade</h4>
+              <p class="text-xs text-slate-400 leading-relaxed">
+                Uso ético, seguro e consciente de tecnologias de inteligência artificial e privacidade de dados.
+              </p>
+            </div>
+
+            <!-- Resultado -->
+            <div class="p-6 rounded-2xl bg-[#0c1326]/90 border border-white/[0.08] hover:border-emerald-400/50 hover:bg-[#0e172e] transition-all text-center group">
+              <div class="w-12 h-12 mx-auto rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 mb-4 group-hover:scale-110 transition-transform">
+                <i data-lucide="check-check" class="w-6 h-6"></i>
+              </div>
+              <h4 class="font-heading font-bold text-lg text-white mb-2 group-hover:text-emerald-300 transition-colors">Resultado</h4>
+              <p class="text-xs text-slate-400 leading-relaxed">
+                Compromisso com o valor tangível entregue em cada consultoria e solução implementada.
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 6. BENEFÍCIOS SECTION -->
+    <section id="beneficios" class="py-24 relative border-t border-white/[0.06] bg-[#070b18]/60">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Header -->
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-semibold uppercase tracking-wider mb-4">
+            Vantagens Estratégicas
+          </div>
+          <h2 class="font-heading font-bold text-3xl sm:text-4xl lg:text-5xl text-white tracking-tight mb-4">
+            Como a Technology behind corporation pode ajudar sua empresa
+          </h2>
+          <p class="text-slate-400 text-base sm:text-lg">
+            Benefícios tangíveis ao adotar a Inteligência Artificial como parceira central de crescimento e eficiência.
+          </p>
+        </div>
+
+        <!-- 7 Benefícios Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+          <!-- 1. Redução de custos -->
+          <div class="p-8 rounded-2xl bg-[#0c1326] border border-white/[0.08] hover:border-emerald-500/40 hover:bg-[#0f172e] transition-all group flex items-start gap-5">
+            <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 shrink-0 group-hover:scale-110 transition-transform">
+              <i data-lucide="piggy-bank" class="w-6 h-6"></i>
+            </div>
+            <div>
+              <h3 class="font-heading font-bold text-xl text-white mb-2 group-hover:text-emerald-300 transition-colors">
+                Redução de custos
+              </h3>
+              <p class="text-slate-400 text-sm leading-relaxed">
+                Diminuição de despesas operacionais através da otimização do uso de recursos e eliminação de desperdícios no dia a dia.
+              </p>
+            </div>
+          </div>
+
+          <!-- 2. Economia de tempo -->
+          <div class="p-8 rounded-2xl bg-[#0c1326] border border-white/[0.08] hover:border-cyan-500/40 hover:bg-[#0f172e] transition-all group flex items-start gap-5">
+            <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 shrink-0 group-hover:scale-110 transition-transform">
+              <i data-lucide="clock" class="w-6 h-6"></i>
+            </div>
+            <div>
+              <h3 class="font-heading font-bold text-xl text-white mb-2 group-hover:text-cyan-300 transition-colors">
+                Economia de tempo
+              </h3>
+              <p class="text-slate-400 text-sm leading-relaxed">
+                Aceleração de fluxos e atividades com processos ágeis e respostas automatizadas em frações de segundo.
+              </p>
+            </div>
+          </div>
+
+          <!-- 3. Redução de erros -->
+          <div class="p-8 rounded-2xl bg-[#0c1326] border border-white/[0.08] hover:border-indigo-500/40 hover:bg-[#0f172e] transition-all group flex items-start gap-5">
+            <div class="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 shrink-0 group-hover:scale-110 transition-transform">
+              <i data-lucide="shield-check" class="w-6 h-6"></i>
+            </div>
+            <div>
+              <h3 class="font-heading font-bold text-xl text-white mb-2 group-hover:text-indigo-300 transition-colors">
+                Redução de erros
+              </h3>
+              <p class="text-slate-400 text-sm leading-relaxed">
+                Padronização inteligente e validação automática de dados para mitigar falhas manuais e inconsistências operacionais.
+              </p>
+            </div>
+          </div>
+
+          <!-- 4. Automação de tarefas -->
+          <div class="p-8 rounded-2xl bg-[#0c1326] border border-white/[0.08] hover:border-sky-500/40 hover:bg-[#0f172e] transition-all group flex items-start gap-5">
+            <div class="w-12 h-12 rounded-xl bg-sky-500/10 border border-sky-500/20 flex items-center justify-center text-sky-400 shrink-0 group-hover:scale-110 transition-transform">
+              <i data-lucide="bot" class="w-6 h-6"></i>
+            </div>
+            <div>
+              <h3 class="font-heading font-bold text-xl text-white mb-2 group-hover:text-sky-300 transition-colors">
+                Automação de tarefas
+              </h3>
+              <p class="text-slate-400 text-sm leading-relaxed">
+                Liberação da equipe de tarefas manuais e repetitivas, permitindo que o foco humano seja direcionado a atividades estratégicas.
+              </p>
+            </div>
+          </div>
+
+          <!-- 5. Melhor tomada de decisões -->
+          <div class="p-8 rounded-2xl bg-[#0c1326] border border-white/[0.08] hover:border-amber-500/40 hover:bg-[#0f172e] transition-all group flex items-start gap-5">
+            <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 shrink-0 group-hover:scale-110 transition-transform">
+              <i data-lucide="sparkle" class="w-6 h-6"></i>
+            </div>
+            <div>
+              <h3 class="font-heading font-bold text-xl text-white mb-2 group-hover:text-amber-300 transition-colors">
+                Melhor tomada de decisões
+              </h3>
+              <p class="text-slate-400 text-sm leading-relaxed">
+                Subsídios analíticos precisos e insights em tempo real para orientar escolhas de negócios embasadas e seguras.
+              </p>
+            </div>
+          </div>
+
+          <!-- 6. Otimização de processos -->
+          <div class="p-8 rounded-2xl bg-[#0c1326] border border-white/[0.08] hover:border-violet-500/40 hover:bg-[#0f172e] transition-all group flex items-start gap-5">
+            <div class="w-12 h-12 rounded-xl bg-violet-500/10 border border-violet-500/20 flex items-center justify-center text-violet-400 shrink-0 group-hover:scale-110 transition-transform">
+              <i data-lucide="gauge" class="w-6 h-6"></i>
+            </div>
+            <div>
+              <h3 class="font-heading font-bold text-xl text-white mb-2 group-hover:text-violet-300 transition-colors">
+                Otimização de processos
+              </h3>
+              <p class="text-slate-400 text-sm leading-relaxed">
+                Redesenho e fluidez dos procedimentos corporativos, elevando a produtividade global da operação.
+              </p>
+            </div>
+          </div>
+
+          <!-- 7. Uso inteligente de dados (Destaque span full ou centrado) -->
+          <div class="p-8 rounded-2xl bg-gradient-to-r from-[#0c1326] via-[#101a36] to-[#0c1326] border border-cyan-500/30 hover:border-cyan-400 hover:bg-[#0f172e] transition-all group flex items-start gap-5 md:col-span-2 lg:col-span-3">
+            <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 shrink-0 group-hover:scale-110 transition-transform">
+              <i data-lucide="database" class="w-6 h-6"></i>
+            </div>
+            <div>
+              <h3 class="font-heading font-bold text-xl text-white mb-2 group-hover:text-cyan-300 transition-colors">
+                Uso inteligente de dados
+              </h3>
+              <p class="text-slate-400 text-sm leading-relaxed max-w-4xl">
+                Transformação de dados brutos e dispersos em ativos de inteligência preditiva e competitiva para a sua organização.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 7. CONTATO SECTION -->
+    <section id="contato" class="py-24 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          
+          <!-- Left Info Column -->
+          <div class="lg:col-span-5 space-y-8">
+            <div>
+              <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-semibold uppercase tracking-wider mb-4">
+                Fale Conosco
+              </div>
+              <h2 class="font-heading font-bold text-3xl sm:text-4xl lg:text-5xl text-white tracking-tight mb-4">
+                Inicie a transformação com a Technology behind corporation
+              </h2>
+              <p class="text-slate-400 text-base sm:text-lg leading-relaxed">
+                Entre em contato para conversarmos sobre os desafios da sua empresa e como podemos criar uma solução personalizada de Inteligência Artificial para o seu negócio.
+              </p>
+            </div>
+
+            <div class="space-y-4">
+              <div class="flex items-center gap-4 p-4 rounded-xl bg-[#0c1326] border border-white/[0.06]">
+                <div class="w-10 h-10 rounded-lg bg-cyan-500/10 flex items-center justify-center text-cyan-400">
+                  <i data-lucide="mail" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <p class="text-xs text-slate-400 font-medium">E-mail Corporativo</p>
+                  <p class="text-sm font-semibold text-white">contato@technologybehind.com</p>
+                </div>
+              </div>
+
+              <div class="flex items-center gap-4 p-4 rounded-xl bg-[#0c1326] border border-white/[0.06]">
+                <div class="w-10 h-10 rounded-lg bg-indigo-500/10 flex items-center justify-center text-indigo-400">
+                  <i data-lucide="phone" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <p class="text-xs text-slate-400 font-medium">Atendimento Consultivo</p>
+                  <p class="text-sm font-semibold text-white">(11) 4004-8323</p>
+                </div>
+              </div>
+
+              <div class="flex items-center gap-4 p-4 rounded-xl bg-[#0c1326] border border-white/[0.06]">
+                <div class="w-10 h-10 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-400">
+                  <i data-lucide="map-pin" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <p class="text-xs text-slate-400 font-medium">Localização</p>
+                  <p class="text-sm font-semibold text-white">Atendimento Nacional & Remoto</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Right Form Column -->
+          <div class="lg:col-span-7">
+            <div class="relative rounded-2xl bg-[#0c1326]/95 border border-white/10 p-8 sm:p-10 shadow-2xl backdrop-blur-xl">
+              
+              <h3 class="font-heading font-bold text-2xl text-white mb-2">
+                Solicite uma Consulta
+              </h3>
+              <p class="text-slate-400 text-sm mb-6">
+                Preencha os campos abaixo e nosso time de consultores entrará em contato.
+              </p>
+
+              <!-- Formulário de Contato -->
+              <form id="contact-form" class="space-y-5" novalidate>
+                
+                <!-- Campo: Nome -->
+                <div>
+                  <label for="name" class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">
+                    Nome Completo <span class="text-cyan-400">*</span>
+                  </label>
+                  <div class="relative">
+                    <input 
+                      type="text" 
+                      id="name" 
+                      name="name" 
+                      required 
+                      placeholder="Ex: Carlos Silva"
+                      class="w-full px-4 py-3.5 rounded-xl bg-[#060914] border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 text-sm transition-all"
+                    />
+                  </div>
+                  <p id="name-error" class="hidden mt-1.5 text-xs text-rose-400 font-medium">Por favor, insira o seu nome.</p>
+                </div>
+
+                <!-- Grid E-mail e Telefone -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                  
+                  <!-- Campo: E-mail -->
+                  <div>
+                    <label for="email" class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">
+                      E-mail Corporativo <span class="text-cyan-400">*</span>
+                    </label>
+                    <input 
+                      type="email" 
+                      id="email" 
+                      name="email" 
+                      required 
+                      placeholder="carlos@suaempresa.com"
+                      class="w-full px-4 py-3.5 rounded-xl bg-[#060914] border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 text-sm transition-all"
+                    />
+                    <p id="email-error" class="hidden mt-1.5 text-xs text-rose-400 font-medium">Por favor, insira um e-mail válido.</p>
+                  </div>
+
+                  <!-- Campo: Telefone -->
+                  <div>
+                    <label for="phone" class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">
+                      Telefone / WhatsApp <span class="text-cyan-400">*</span>
+                    </label>
+                    <input 
+                      type="tel" 
+                      id="phone" 
+                      name="phone" 
+                      required 
+                      placeholder="(11) 98765-4321"
+                      class="w-full px-4 py-3.5 rounded-xl bg-[#060914] border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 text-sm transition-all"
+                    />
+                    <p id="phone-error" class="hidden mt-1.5 text-xs text-rose-400 font-medium">Por favor, insira um telefone para contato.</p>
+                  </div>
+
+                </div>
+
+                <!-- Campo: Mensagem -->
+                <div>
+                  <label for="message" class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">
+                    Campo para mensagem <span class="text-cyan-400">*</span>
+                  </label>
+                  <textarea 
+                    id="message" 
+                    name="message" 
+                    rows="4" 
+                    required 
+                    placeholder="Descreva brevemente as necessidades, desafios ou processos da sua empresa que deseja otimizar com IA..."
+                    class="w-full px-4 py-3.5 rounded-xl bg-[#060914] border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 text-sm transition-all resize-none"
+                  ></textarea>
+                  <p id="message-error" class="hidden mt-1.5 text-xs text-rose-400 font-medium">Por favor, digite a sua mensagem.</p>
+                </div>
+
+                <!-- Botão de Envio -->
+                <button 
+                  type="submit" 
+                  id="submit-btn"
+                  class="w-full py-4 px-6 rounded-xl font-semibold text-white bg-gradient-to-r from-cyan-500 via-sky-500 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500 shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center gap-2 group"
+                >
+                  <span id="btn-text">Entrar em contato</span>
+                  <i data-lucide="send" id="btn-icon" class="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-0.5 transition-transform"></i>
+                  <div id="btn-spinner" class="hidden w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                </button>
+
+              </form>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-white/10 bg-[#03050a] pt-16 pb-12 relative z-10 text-slate-400">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-white/[0.08]">
+        
+        <!-- Brand Info (Col 5) -->
+        <div class="lg:col-span-5 space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-cyan-500 to-indigo-600 p-0.5 flex items-center justify-center">
+              <div class="w-full h-full bg-[#05070f] rounded-[6px] flex items-center justify-center">
+                <svg class="w-5 h-5 text-cyan-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                </svg>
+              </div>
+            </div>
+            <span class="font-heading font-extrabold text-xl tracking-tight text-white">Technology behind corporation</span>
+          </div>
+          <p class="text-sm text-slate-400 leading-relaxed max-w-sm">
+            Consultoria especializada em Inteligência Artificial. Transformando desafios complexos em soluções eficientes e personalizadas.
+          </p>
+          <p class="text-xs text-cyan-400/90 font-medium">
+            "Transformando desafios em soluções com Inteligência Artificial."
+          </p>
+        </div>
+
+        <!-- Quick Links (Col 3) -->
+        <div class="lg:col-span-3 space-y-3">
+          <h4 class="font-heading font-bold text-white text-sm uppercase tracking-wider">Navegação</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#inicio" class="hover:text-cyan-400 transition-colors">Página Inicial</a></li>
+            <li><a href="#sobre" class="hover:text-cyan-400 transition-colors">Sobre a Empresa</a></li>
+            <li><a href="#servicos" class="hover:text-cyan-400 transition-colors">Serviços Especializados</a></li>
+            <li><a href="#como-trabalhamos" class="hover:text-cyan-400 transition-colors">Como Trabalhamos</a></li>
+            <li><a href="#institucional" class="hover:text-cyan-400 transition-colors">Missão, Visão e Valores</a></li>
+            <li><a href="#beneficios" class="hover:text-cyan-400 transition-colors">Benefícios Corporativos</a></li>
+          </ul>
+        </div>
+
+        <!-- Serviços Highlights (Col 4) -->
+        <div class="lg:col-span-4 space-y-3">
+          <h4 class="font-heading font-bold text-white text-sm uppercase tracking-wider">Competências</h4>
+          <ul class="space-y-1.5 text-xs text-slate-400">
+            <li>• Análise de problemas empresariais</li>
+            <li>• Desenvolvimento de soluções com IA</li>
+            <li>• Automação inteligente de processos</li>
+            <li>• Previsão e análise avançada de dados</li>
+            <li>• Sistemas de recomendação e detecção de anomalias</li>
+            <li>• Integração de IA com ecossistemas existentes</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Bottom Note & Disclaimer -->
+      <div class="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+        <p>© 2026 Technology behind corporation. Todos os direitos reservados.</p>
+        
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.03] border border-white/[0.06] text-slate-400 text-center">
+          <i data-lucide="info" class="w-3.5 h-3.5 text-cyan-400 shrink-0"></i>
+          <span>Projeto conceitual e acadêmico de consultoria em Inteligência Artificial.</span>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Contact Modal Feedback -->
+  <div id="success-modal" class="fixed inset-0 z-50 flex items-center justify-center px-4 bg-black/80 backdrop-blur-md hidden transition-opacity duration-300 opacity-0">
+    <div class="relative w-full max-w-md p-8 rounded-2xl bg-[#0c1326] border border-cyan-500/40 shadow-2xl text-center transform scale-95 transition-transform duration-300">
+      
+      <div class="w-16 h-16 mx-auto mb-5 rounded-2xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400">
+        <i data-lucide="check-circle" class="w-9 h-9"></i>
+      </div>
+
+      <h3 class="font-heading font-bold text-2xl text-white mb-2">Mensagem Recebida!</h3>
+      <p class="text-sm text-slate-300 leading-relaxed mb-6">
+        Obrigado pelo contato com a <strong class="text-cyan-400">Technology behind corporation</strong>. Analisaremos sua mensagem e retornaremos em breve com nossa equipe de consultores.
+      </p>
+
+      <button id="close-modal-btn" class="w-full py-3 rounded-xl font-semibold text-white bg-gradient-to-r from-cyan-500 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500 transition-all shadow-lg shadow-cyan-500/20">
+        Entendido
+      </button>
+    </div>
+  </div>
+
+  <!-- Back to Top Floating Button -->
+  <button id="back-to-top" aria-label="Voltar ao topo" class="fixed bottom-6 right-6 z-40 p-3 rounded-full bg-cyan-500 text-black shadow-lg shadow-cyan-500/30 hover:bg-cyan-400 hover:scale-110 focus:outline-none transition-all duration-300 opacity-0 pointer-events-none">
+    <i data-lucide="arrow-up" class="w-5 h-5"></i>
+  </button>
+
+  <!-- Script JS -->
+  <script src="js/main.js"></script>
+</body>
+</html>
